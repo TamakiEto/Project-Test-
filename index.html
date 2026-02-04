@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChocoBerryBakes | Chocolate & Strawberry Bakery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --choco: #4b2e2b;
+      --berry: #d6456f;
+      --cream: #fff5ec;
+      --soft: #f7d6df;
+    }body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--cream);
+  color: var(--choco);
+}
+
+header {
+  background: linear-gradient(135deg, var(--choco), var(--berry));
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+nav {
+  background-color: #3a2320;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--soft);
+}
+
+section {
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about {
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  color: var(--berry);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+  background-color: var(--choco);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+  </style>
+</head>
+<body>  <header>
+    <h1>ChocoBerryBakes</h1>
+    <p>เบเกอรี่โฮมเมด • ช็อกโกแลต & สตรอเบอร์รี่ เท่านั้น</p>
+  </header>  <nav>
+    <a href="#about">เกี่ยวกับร้าน</a>
+    <a href="#menu">เมนู</a>
+    <a href="#contact">ติดต่อ</a>
+  </nav>  <section id="about" class="about">
+    <h2>🍫🍓 เกี่ยวกับ ChocoBerryBakes</h2>
+    <p>
+      ChocoBerryBakes คือร้านเบเกอรี่ที่ตั้งใจสร้างขนมหวาน
+      จาก “ช็อกโกแลต” และ “สตรอเบอร์รี่” เท่านั้น
+      เพื่อให้ได้รสชาติที่หวานละมุน มีเอกลักษณ์ และอบอุ่นเหมือนโฮมเมด
+    </p>
+  </section>  <section id="menu">
+    <h2>เมนูแนะนำ</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Chocolate Cake">
+        <h3>Chocolate Lava Cake</h3>
+        <p class="price">฿89</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Strawberry Tart">
+        <h3>Strawberry Tart</h3>
+        <p class="price">฿79</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Choco Berry Brownie">
+        <h3>Choco Berry Brownie</h3>
+        <p class="price">฿69</p>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <h2>ติดต่อร้าน</h2>
+    <p>Instagram: @ChocoBerryBakes</p>
+    <p>Facebook: ChocoBerryBakes</p>
+  </section>  <footer>
+    <p>© 2026 ChocoBerryBakes | Made with ❤</p>
+  </footer></body>
+  </html>
