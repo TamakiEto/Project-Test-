@@ -28,11 +28,6 @@ header h1 {
   margin: 0;
 }
 
-header p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-}
-
 nav {
   background-color: #3a2320;
   display: flex;
@@ -41,24 +36,34 @@ nav {
   padding: 0.8rem;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
-nav a:hover {
+nav button:hover {
   color: var(--soft);
 }
 
 section {
+  display: none;
   padding: 3rem 1.5rem;
   max-width: 1100px;
   margin: auto;
+  animation: fade 0.4s ease;
 }
 
-.about {
-  text-align: center;
+section.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .products {
@@ -76,16 +81,9 @@ section {
   text-align: center;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
-
 .price {
   color: var(--berry);
   font-weight: bold;
-  font-size: 1.1rem;
 }
 
 footer {
@@ -98,44 +96,48 @@ footer {
 
   </style>
 </head>
-<body>  <header>
-    <h1>ChocoBerryBakes</h1>
-    <p>เบเกอรี่โฮมเมด • ช็อกโกแลต & สตรอเบอร์รี่ เท่านั้น</p>
-  </header>  <nav>
-    <a href="#about">เกี่ยวกับร้าน</a>
-    <a href="#menu">เมนู</a>
-    <a href="#contact">ติดต่อ</a>
-  </nav>  <section id="about" class="about">
-    <h2>🍫🍓 เกี่ยวกับ ChocoBerryBakes</h2>
-    <p>
-      ChocoBerryBakes คือร้านเบเกอรี่ที่ตั้งใจสร้างขนมหวาน
-      จาก “ช็อกโกแลต” และ “สตรอเบอร์รี่” เท่านั้น
-      เพื่อให้ได้รสชาติที่หวานละมุน มีเอกลักษณ์ และอบอุ่นเหมือนโฮมเมด
-    </p>
-  </section>  <section id="menu">
-    <h2>เมนูแนะนำ</h2>
-    <div class="products">
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Chocolate Cake">
-        <h3>Chocolate Lava Cake</h3>
-        <p class="price">฿89</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Strawberry Tart">
-        <h3>Strawberry Tart</h3>
-        <p class="price">฿79</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200" alt="Choco Berry Brownie">
-        <h3>Choco Berry Brownie</h3>
-        <p class="price">฿69</p>
-      </div>
+<body><header>
+  <h1>ChocoBerryBakes</h1>
+  <p>เบเกอรี่โฮมเมด • ช็อกโกแลต & สตรอเบอร์รี่</p>
+</header><nav>
+  <button onclick="showSection('about')">เกี่ยวกับร้าน</button>
+  <button onclick="showSection('menu')">เมนู</button>
+  <button onclick="showSection('contact')">ติดต่อ</button>
+</nav><section id="about" class="active">
+  <h2>🍫🍓 เกี่ยวกับร้าน</h2>
+  <p>
+    ChocoBerryBakes คือร้านเบเกอรี่ที่ตั้งใจทำขนมจากช็อกโกแลตและสตรอเบอร์รี่เท่านั้น
+    เพื่อให้ร้านมีเอกลักษณ์ รสชาติหวานละมุน และดูอบอุ่นแบบโฮมเมด
+  </p>
+</section><section id="menu">
+  <h2>เมนูของร้าน</h2>
+  <div class="products">
+    <div class="card">
+      <h3>Chocolate Lava Cake</h3>
+      <p class="price">฿89</p>
     </div>
-  </section>  <section id="contact">
-    <h2>ติดต่อร้าน</h2>
-    <p>Instagram: @ChocoBerryBakes</p>
-    <p>Facebook: ChocoBerryBakes</p>
-  </section>  <footer>
-    <p>© 2026 ChocoBerryBakes | Made with ❤</p>
-  </footer></body>
-  </html>
+    <div class="card">
+      <h3>Strawberry Tart</h3>
+      <p class="price">฿79</p>
+    </div>
+    <div class="card">
+      <h3>Choco Berry Brownie</h3>
+      <p class="price">฿69</p>
+    </div>
+  </div>
+</section><section id="contact">
+  <h2>ติดต่อร้าน</h2>
+  <p>Instagram : @ChocoBerryBakes</p>
+  <p>Facebook : ChocoBerryBakes</p>
+  <p>เปิดรับออเดอร์ทุกวัน 💗</p>
+</section><footer>
+  <p>© 2026 ChocoBerryBakes</p>
+</footer><script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => {
+      sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script></body>
+</html>
