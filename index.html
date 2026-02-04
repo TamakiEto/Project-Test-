@@ -2,142 +2,205 @@
 <head>
   <meta charset="UTF-8" />
   <title>ChocoBerryBakes | Chocolate & Strawberry Bakery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <style>
     :root {
       --choco: #4b2e2b;
       --berry: #d6456f;
       --cream: #fff5ec;
       --soft: #f7d6df;
-    }body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background-color: var(--cream);
-  color: var(--choco);
-}
+    }
 
-header {
-  background: linear-gradient(135deg, var(--choco), var(--berry));
-  color: white;
-  padding: 2.5rem 1rem;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--cream);
+      color: var(--choco);
+      overflow-x: hidden;
+    }
 
-header h1 {
-  font-size: 2.8rem;
-  margin: 0;
-}
+    header {
+      background: linear-gradient(135deg, var(--choco), var(--berry));
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+    }
 
-nav {
-  background-color: #3a2320;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.8rem;
-}
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
 
-nav button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
 
-nav button:hover {
-  color: var(--soft);
-}
+    nav {
+      background-color: #3a2320;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-section {
-  display: none;
-  padding: 3rem 1.5rem;
-  max-width: 1100px;
-  margin: auto;
-  animation: fade 0.4s ease;
-}
+    nav button {
+      background: var(--berry);
+      border: none;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-section.active {
-  display: block;
-}
+    nav button:hover {
+      background: #b8355c;
+    }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    section {
+      display: none;
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fade 0.4s ease;
+    }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+    section.active {
+      display: block;
+    }
 
-.card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-}
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.price {
-  color: var(--berry);
-  font-weight: bold;
-}
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
 
-footer {
-  background-color: var(--choco);
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
-}
+    .card {
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      text-align: center;
+    }
 
-  </style>
-</head>
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      color: var(--berry);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--choco);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    /* เอฟเฟกต์ตก */
+    .falling {
+      position: fixed;
+      top: -50px;
+      font-size: 22px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style></head>
 <body><header>
   <h1>ChocoBerryBakes</h1>
-  <p>เบเกอรี่โฮมเมด • ช็อกโกแลต & สตรอเบอร์รี่</p>
+  <p>เบเกอรี่โฮมเมดที่หลงรัก “ช็อกโกแลต & สตรอเบอร์รี่” 🍫🍓</p>
 </header><nav>
-  <button onclick="showSection('about')">เกี่ยวกับร้าน</button>
-  <button onclick="showSection('menu')">เมนู</button>
-  <button onclick="showSection('contact')">ติดต่อ</button>
+  <button onclick="showSection('about')">รายละเอียดร้าน</button>
+  <button onclick="showSection('menu')">สินค้า</button>
+  <button onclick="showSection('order')">จอง / ชำระเงิน</button>
+  <button onclick="showSection('contact')">ติดต่อร้าน</button>
 </nav><section id="about" class="active">
-  <h2>🍫🍓 เกี่ยวกับร้าน</h2>
+  <h2>🍫 เกี่ยวกับ ChocoBerryBakes</h2>
   <p>
-    ChocoBerryBakes คือร้านเบเกอรี่ที่ตั้งใจทำขนมจากช็อกโกแลตและสตรอเบอร์รี่เท่านั้น
-    เพื่อให้ร้านมีเอกลักษณ์ รสชาติหวานละมุน และดูอบอุ่นแบบโฮมเมด
+    ChocoBerryBakes เป็นร้านเบเกอรี่โฮมเมดที่สร้างขึ้นจากความตั้งใจ
+    ที่อยากทำขนมหวานให้อบอวลไปด้วยความสุข เราเลือกใช้วัตถุดิบหลัก
+    เพียงสองอย่างคือ “ช็อกโกแลต” และ “สตรอเบอร์รี่” เพื่อให้ร้านมีเอกลักษณ์
+    และจดจำได้ง่าย ลูกค้าจะได้รับขนมที่ทำสดใหม่ทุกออเดอร์
+    เหมาะสำหรับเป็นของขวัญหรือให้รางวัลตัวเองในวันพิเศษ
   </p>
 </section><section id="menu">
-  <h2>เมนูของร้าน</h2>
+  <h2>🍓 เมนูแนะนำ</h2>
   <div class="products">
     <div class="card">
+      <img src="images/lava.jpg" alt="Chocolate Lava Cake">
       <h3>Chocolate Lava Cake</h3>
+      <p>เค้กช็อกโกแลตเข้มข้น ไส้ลาวาเยิ้ม ๆ</p>
       <p class="price">฿89</p>
     </div>
     <div class="card">
+      <img src="images/tart.jpg" alt="Strawberry Tart">
       <h3>Strawberry Tart</h3>
+      <p>ทาร์ตสตรอเบอร์รี่สด หอมหวานกำลังดี</p>
       <p class="price">฿79</p>
     </div>
     <div class="card">
+      <img src="images/brownie.jpg" alt="Choco Berry Brownie">
       <h3>Choco Berry Brownie</h3>
+      <p>บราวนี่ช็อกโกแลตตัดรสด้วยสตรอเบอร์รี่</p>
       <p class="price">฿69</p>
     </div>
   </div>
+</section><section id="order">
+  <h2>🛒 การจองสินค้า & ช่องทางการชำระเงิน</h2>
+  <p>
+    ลูกค้าสามารถสั่งจองล่วงหน้าได้ทาง Instagram หรือ Facebook
+    โดยแจ้งชื่อสินค้า จำนวน และวันที่ต้องการรับสินค้า
+  </p>
+  <ul>
+    <li>💳 โอนผ่าน Mobile Banking</li>
+    <li>💵 พร้อมเพย์</li>
+    <li>📦 รับสินค้าหน้าร้าน / จัดส่ง</li>
+  </ul>
 </section><section id="contact">
-  <h2>ติดต่อร้าน</h2>
+  <h2>📞 ติดต่อร้าน</h2>
   <p>Instagram : @ChocoBerryBakes</p>
   <p>Facebook : ChocoBerryBakes</p>
-  <p>เปิดรับออเดอร์ทุกวัน 💗</p>
+  <p>เปิดรับออเดอร์ทุกวัน 09:00 – 20:00 น.</p>
 </section><footer>
-  <p>© 2026 ChocoBerryBakes</p>
+  <p>© 2026 ChocoBerryBakes | Made with ❤</p>
 </footer><script>
   function showSection(id) {
-    document.querySelectorAll('section').forEach(sec => {
-      sec.classList.remove('active');
-    });
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
   }
+
+  /* เอฟเฟกต์ช็อกโกแลต & สตรอเบอร์รี่ตก */
+  const icons = ['🍫','🍓'];
+  setInterval(() => {
+    const el = document.createElement('div');
+    el.className = 'falling';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = 4 + Math.random() * 3 + 's';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 7000);
+  }, 500);
 </script></body>
 </html>
